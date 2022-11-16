@@ -37,7 +37,7 @@ At this point, the `predict` method returns a list of the results from every hid
 
 - `predict(input)[-1][0][0]`.
 
-Included is an XOR example with a simple accuracy logging during the training phase.
+Included in the "examples" directory is an XOR example with a simple accuracy logging during the training phase, as well as a "Rock Paper Scissors" game, that shows the neural network learning process by having the user teach the network with every input. Some examples might have additional package requirements, so please make sure to install them from the "requirements.txt" file.
 
 If the results are not accurate enough, try adjusting the amount of hidded layers and/or hidden nodes, or try a different activation function. Please keep in mind this is intended as an introduction to Machine Learning, so depending on the complexity of your project, results can be extremelly inacurrate.
 
