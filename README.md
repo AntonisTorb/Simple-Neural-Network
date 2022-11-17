@@ -53,7 +53,7 @@ Resources used to create this:
 
 - [ ] Attempt to use the network for an OCR (Optical Character Recognition) application and apply improvements and/or adjustments if necessary.
 - [ ] Add more error handling for invalid inputs.
-- [ ] Add option to adjust the weights and biases after a mini batch of training data, rather than after every iteration.
+- [X] Add option to adjust the weights and biases after a mini batch of training data, rather than after every iteration.
 - [ ] Look into different activation functions.
 - [ ] Option to save weights and biases in JSON file after training, as well as loading them from a JSON file.
 - [ ] Improve the accuracy logging in the XOR example and maybe include a visualization of the learning process.
