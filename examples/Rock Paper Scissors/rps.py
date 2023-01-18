@@ -1,8 +1,15 @@
+import sys
+import os
 import numpy as np
 import PySimpleGUI as sg
 
-from snn import SimpleNeuralNetwork
 
+# Following 2 lines needed to import the neural network from 2 directories higher, as relative imports lead to ImportError
+# This way I don't need to maintain a separate snn.py file
+snn_path = os.path.dirname(os.path.dirname(os.getcwd()))
+sys.path.append(snn_path)
+
+from snn import SimpleNeuralNetwork
 
 def main() -> None:
     '''Main function.'''

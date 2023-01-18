@@ -1,4 +1,5 @@
 # Simple-Neural-Network
+
 A simple neural network for basic operations and learning. Supports multiple hidden layers and 3 different activation functions. All weights and biases are initiated randomly in the range (-1, 1).
 
 ## 1) Initializing
@@ -16,7 +17,7 @@ You can optionaly provide:
 
 ## 2) Training
 
-To train the model, call the `train` method for the network instance and provide the following parameters:
+To train the model, call the `train` method in a for loop for the network instance and provide the following parameters:
 
 - `input`: The input data in a list.
 - `target`: The target data in a list.
@@ -24,6 +25,11 @@ To train the model, call the `train` method for the network instance and provide
 You can optionaly provide:
 
 - `learning_rate`: The learning rate of the model (default = 0.1).
+
+If you want the training to happen in batches, instead of after every training dataset, you will also have to provide the following parameters:
+
+- `batch_size`: The number of training data after which the biases and weights will be adjusted.
+- `training_index`: The training loop index needed to calculate when the adjustments need to happen.
 
 At this point, the `train` method returns the final result of the calculation, in order to monitor the accuracy during the learning process, so make sure to assign it to a variable.
 
@@ -37,7 +43,11 @@ At this point, the `predict` method returns a list of the results from every hid
 
 - `predict(input)[-1][0][0]`.
 
+## Examples
+
 Included in the "examples" directory is an XOR example with a simple accuracy logging during the training phase, as well as a "Rock Paper Scissors" game, that shows the neural network learning process by having the user teach the network with every input. Some examples might have additional package requirements, so please make sure to install them from the "requirements.txt" file.
+
+## Notes
 
 If the results are not accurate enough, try adjusting the amount of hidded layers and/or hidden nodes, or try a different activation function. Please keep in mind this is intended as an introduction to Machine Learning, so depending on the complexity of your project, results can be extremelly inacurrate.
 
