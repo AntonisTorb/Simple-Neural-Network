@@ -102,7 +102,7 @@ class SimpleNeuralNetwork:
         # Backpropagation algorithm.
         layer_error = targets - layer_values[0]
         for index in range(len(layer_values)):
-            if index >= len(layer_values) - 1:  # No need to backpropagate on the input layer (we still need its values, so including it in the enumerate).
+            if index >= len(layer_values) - 1:  # No need to backpropagate on the input layer (we still need its values, so including it in the loop).
                 break
 
             delta_bias = layer_error * self.activation_derivative(layer_values[index])
@@ -129,9 +129,10 @@ class SimpleNeuralNetwork:
             delta_biases.reverse()
             delta_weights.reverse()
 
-            for index in range(len(self.biases)):
-                self.biases[index] += delta_biases[index] / batch_size
-                self.weights[index] += learning_rate * delta_weights[index] / batch_size
+            for index, (d_bias, d_weight) in enumerate(zip(delta_biases, delta_weights)):
+                self.biases[index] += d_bias / batch_size
+                self.weights[index] += d_weight / batch_size
+
             delta_biases = []
             delta_weights = []
         
